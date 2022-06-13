@@ -1,0 +1,66 @@
+description: >
+  This command installs new Pods in your project.
+
+parameters:
+  with-cache:
+    type: boolean
+    default: true
+    description: Enable automatic caching of your Podfile dependencies for increased speed.
+
+  key:
+    type: string
+    default: "pods-v1"
+    description: "The cache key to use. The key is immutable."
+
+  repo-update:
+    type: boolean
+    default: false
+    description:  Force running `pod repo update` before install
+
+  deployment:
+    type: boolean
+    default: true
+    description: >
+      Disallow any changes to the Podfile or the
+      Podfile.lock during installation.
+
+  clean-install:
+    type: boolean
+    default: false
+    description: >
+      Ignore the contents of the project cache and force a full pod installation. 
+      This only applies to projects that have enabled incremental installation.
+
+  project-directory:
+    type: string
+    default: ""
+    description: >
+      Project directory.
+      The path to the root of the project directory
+
+steps:
+  - when:
+      condition: <<parameters.with-cache>>
+      steps:
+        - restore_cache:
+            keys:
+              - << parameters.key >>-{{ checksum "<<parameters.project-directory>>/Podfile.lock"  }}-{{ .Branch }}
+              - << parameters.key >>-{{ checksum "<<parameters.project-directory>>/Podfile.lock"  }}
+              - << parameters.key >>
+
+  - run:
+      environment:
+        PARAM_REPO_UPDATE: <<parameters.repo-update>>
+        PARAM_DEPLOYMENT: <<parameters.deployment>>
+        PARAM_CLEAN_INSTALL: <<parameters.clean-install>>
+        PARAM_PROJECT_DIRECTORY: <<parameters.project-directory>>
+      name: Install
+      command: <<include(scripts/install.sh)>> 
+
+  - when:
+      condition: <<parameters.with-cache>>
+      steps:
+        - save_cache:
+            key: << parameters.key >>-{{ checksum "<<parameters.project-directory>>/Podfile.lock"  }}-{{ .Branch }}
+            paths:
+              - << parameters.project-directory >>
