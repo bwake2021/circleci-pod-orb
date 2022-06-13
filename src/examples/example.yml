@@ -1,13 +1,12 @@
 description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+  Basic usage.
+
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    pod: xxkrashxx/pod@1.0.0
   workflows:
-    use-my-orb:
+    basic-usage:
       jobs:
-        - <orb-name>/<job-name>
+        - checkout
+        - pod/install
