@@ -1,0 +1,16 @@
+PODS:
+  - ExampleLib (1.0.1)
+
+DEPENDENCIES:
+  - ExampleLib
+
+SPEC REPOS:
+  trunk:
+    - ExampleLib
+
+SPEC CHECKSUMS:
+  ExampleLib: d395f7e308e55ea08f3fdb6c777458d45890edb9
+
+PODFILE CHECKSUM: b576302e657cbc543bf9fefd228b61614ed74278
+
+COCOAPODS: 1.11.3
