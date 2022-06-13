@@ -1,7 +1,5 @@
 #!/bin/bash
 
-REPOS_LOCATION="$HOME/.cocoapods/repos"
-
 params=()
 [[ $PARAM_REPO_UPDATE == true ]] && params+=(--repo-update)
 [[ $PARAM_DEPLOYMENT == true ]] && params+=(--deployment)
