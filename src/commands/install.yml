@@ -10,12 +10,12 @@ parameters:
   key:
     type: string
     default: "pods-v1"
-    description: "The cache key to use. The key is immutable."
+    description: The cache key to use. The key is immutable.
 
   repo-update:
     type: boolean
     default: false
-    description:  Force running `pod repo update` before install
+    description: Force running `pod repo update` before install
 
   deployment:
     type: boolean
@@ -28,7 +28,7 @@ parameters:
     type: boolean
     default: false
     description: >
-      Ignore the contents of the project cache and force a full pod installation. 
+      Ignore the contents of the project cache and force a full pod installation.
       This only applies to projects that have enabled incremental installation.
 
   project-directory:
@@ -55,7 +55,7 @@ steps:
         PARAM_CLEAN_INSTALL: <<parameters.clean-install>>
         PARAM_PROJECT_DIRECTORY: <<parameters.project-directory>>
       name: Install
-      command: <<include(scripts/install.sh)>> 
+      command: <<include(scripts/install.sh)>>
 
   - when:
       condition: <<parameters.with-cache>>

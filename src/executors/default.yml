@@ -1,12 +1,12 @@
 description: >
-  Select the version of xCode to use.
-  Any available version from this list can be used: https://circleci.com/docs/2.0/xcode-policy/
+  	Select the version of xCode to use.
+  	Any available version from this list can be used: https://circleci.com/docs/2.0/xcode-policy/
 macos:
     xcode: <<parameters.tag>>
 parameters:
-  version:
-    default: 13.4.1
-    description: >
-      Pick a specific xCode version:
-      https://circleci.com/docs/2.0/testing-ios/#supported-xcode-versions
-    type: string
+    version:
+        default: 13.4.1
+        description: >
+            Pick a specific xCode version:
+            https://circleci.com/docs/2.0/testing-ios/#supported-xcode-versions
+        type: string
