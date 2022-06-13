@@ -9,7 +9,7 @@ filters: &filters
 
 jobs:
   command-tests:
-    working_directory: ./test-app
+    working_directory: $CIRCLE_WORKING_DIRECTORY/test-app
     macos:
       xcode: 13.4.1
     steps:
