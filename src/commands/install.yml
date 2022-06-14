@@ -68,5 +68,5 @@ steps:
         - save_cache:
             key: << parameters.key >>-{{ checksum "<<parameters.project-directory>>/Podfile.lock"  }}-{{ .Branch }}
             paths:
-              - << parameters.project-directory/Pods >>
+              - << parameters.project-directory >>/Pods
               - ~/.cocoapods/repos
