@@ -3,7 +3,7 @@
 [![CircleCI Build Status](https://circleci.com/gh/xxKRASHxx/circleci-pod-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/xxKRASHxx/circleci-pod-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/pod/pod.svg)](https://circleci.com/orbs/registry/orb/pod/pod) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/xxKRASHxx/circleci-pod-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 
-This orb wrapps [cocoapods](https://cocoapods.org) and makes it handy to use in CircleCI.  
+This orb wraps [cocoapods](https://cocoapods.org) and makes it handy to use in CircleCI.  
 Allows controll all basic functionality used during installation process.  
 Wrapps caching mechanism to improve build time.  
 
