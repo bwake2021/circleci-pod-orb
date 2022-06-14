@@ -9,12 +9,12 @@ filters: &filters
 
 jobs:
   command-tests:
+    working-directory: ~/project/test-app
     macos:
       xcode: 13.4.1
     steps:
       - checkout
-      - pod/install:
-          project-directory: ~/test-app
+      - pod/install
 
 workflows:
   test-deploy:
