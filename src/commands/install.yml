@@ -39,6 +39,13 @@ parameters:
       The path to the root of the project directory.
       Defaults to project's root.
 
+  with-bundler:
+    type: boolean
+    default: false
+    description: >
+      Utilises bundler environment. 
+      Do not falls back to the global cocoapods, if enabled.
+
 steps:
   - when:
       condition: <<parameters.with-cache>>
@@ -55,6 +62,7 @@ steps:
         PARAM_DEPLOYMENT: <<parameters.deployment>>
         PARAM_CLEAN_INSTALL: <<parameters.clean-install>>
         PARAM_PROJECT_DIRECTORY: <<parameters.project-directory>>
+        PARAM_USES_BUNDLER: <<parameters.with-bundler>>
       name: Install
       command: <<include(scripts/install.sh)>>
 

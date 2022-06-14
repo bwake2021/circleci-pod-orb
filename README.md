@@ -3,14 +3,32 @@
 [![CircleCI Build Status](https://circleci.com/gh/xxKRASHxx/circleci-pod-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/xxKRASHxx/circleci-pod-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/pod/pod.svg)](https://circleci.com/orbs/registry/orb/pod/pod) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/xxKRASHxx/circleci-pod-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 
-This orb wrapps [cocoapods](https://cocoapods.org) and makes it handy to use in CircleCI.
-Allows controll all basic functionality used during installation process.
+This orb wrapps [cocoapods](https://cocoapods.org) and makes it handy to use in CircleCI.  
+Allows controll all basic functionality used during installation process.  
 Wrapps caching mechanism to improve build time.
 
 ## Examples
 
-Basically, commands are pretty much the same as if you used plain console.
+Commands are pretty much the same as if you used them from the console:
 
+### Basic usage
+```
+version: 2.1
+
+orbs:
+  pod: xxkrashxx/pod@1.0.1 <-- include this
+
+workflows:
+  basic-usage:
+    jobs:
+      - checkout
+      - pod/install <-- one liner command
+      ...
+```
+
+### [Bundler](https://bundler.io) support!
+We highly recommend using environment as a code approach.  
+This will guarantee the same result on each computer.
 ```
 version: 2.1
 
@@ -22,11 +40,8 @@ workflows:
     jobs:
       - checkout
       - pod/install:
-          deployment: false
-          repo-update: true
-          project-directory: ./subfolder
-      - run: curl -sL https://firebase.tools | bash
-      - run: bundle exec fastlane upload_firebase
+          with-bundler: true
+      ...
 ```
 ---
 
