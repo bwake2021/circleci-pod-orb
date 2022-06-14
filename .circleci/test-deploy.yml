@@ -8,14 +8,14 @@ filters: &filters
     only: /.*/
 
 jobs:
-  command-tests:
+  install-for-root-test:
+    name: Check pod install working in root.
+    working_directory: ~/project/test-app
     macos:
       xcode: 13.4.1
     steps:
-      - checkout
-      - run:
-          name: cd to test app
-          command: cd test-app
+      - checkout:
+          path: ~/project
       - pod/install
 
 workflows:
