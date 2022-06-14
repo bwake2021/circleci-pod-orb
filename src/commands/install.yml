@@ -33,7 +33,7 @@ parameters:
 
   project-directory:
     type: string
-    default: ""
+    default: .
     description: >
       Project directory.
       The path to the root of the project directory
