@@ -7,5 +7,5 @@ params=()
 [[ $PARAM_PROJECT_DIRECTORY == true ]] && params+=(--project-directory)
 
 pwd
-cat params
+cat "${params[@]}"
 pod install "${params[@]}"
