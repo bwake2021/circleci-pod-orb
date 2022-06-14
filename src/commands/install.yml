@@ -69,4 +69,4 @@ steps:
             key: << parameters.key >>-{{ checksum "<<parameters.project-directory>>/Podfile.lock"  }}-{{ .Branch }}
             paths:
               - << parameters.project-directory/Pods >>
-              - << ~/.cocoapods/repos >>
+              - ~/.cocoapods/repos

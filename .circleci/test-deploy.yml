@@ -18,10 +18,21 @@ jobs:
           path: ~/project
       - pod/install
 
+  install-for-subfolder-test:
+    name: Check pod install working in subfolder.
+    macos:
+      xcode: 13.4.1
+    steps:
+      - checkout
+      - pod/install:
+          project-directory: ~/test-app
+
 workflows:
   test-deploy:
     jobs:
-      - command-tests:
+      - install-for-root-test:
+          filters: *filters
+      - install-for-subfolder-test:
           filters: *filters
       - orb-tools/pack:
           filters: *filters
@@ -31,7 +42,8 @@ workflows:
           pub-type: production
           requires:
             - orb-tools/pack
-            - command-tests
+            - install-for-root-test
+            - install-for-subfolder-test
           context: orb-publishing
           filters:
             branches:
