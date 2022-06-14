@@ -43,7 +43,7 @@ parameters:
     type: boolean
     default: false
     description: >
-      Utilises bundler environment. 
+      Utilises bundler environment.
       Do not falls back to the global cocoapods, if enabled.
 
 steps:
