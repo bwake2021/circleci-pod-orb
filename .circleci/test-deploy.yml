@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout
       - pod/install:
-          project-directory: ~/test-app
+          project-directory: ./test-app
 
 workflows:
   test-deploy:
