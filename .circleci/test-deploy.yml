@@ -9,7 +9,7 @@ filters: &filters
 
 jobs:
   install-for-root-test:
-    name: Check pod install working in root.
+    description: Check pod install working in root.
     working_directory: ~/project/test-app
     macos:
       xcode: 13.4.1
@@ -19,7 +19,7 @@ jobs:
       - pod/install
 
   install-for-subfolder-test:
-    name: Check pod install working in subfolder.
+    description: Check pod install working in subfolder.
     macos:
       xcode: 13.4.1
     steps:
