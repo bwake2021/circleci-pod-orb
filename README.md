@@ -25,6 +25,8 @@ workflows:
           deployment: false
           repo-update: true
           project-directory: ./subfolder
+      - run: curl -sL https://firebase.tools | bash
+      - run: bundle exec fastlane upload_firebase
 ```
 ---
 
