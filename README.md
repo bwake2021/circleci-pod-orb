@@ -16,7 +16,7 @@ Commands are pretty much the same as if you used them from the console:
 version: 2.1
 
 orbs:
-  pod: xxkrashxx/pod@1.1.2<-- include this
+  pod: xxkrashxx/pod@1.1.3<-- include this
 
 jobs:
   basic-usage:
@@ -33,7 +33,7 @@ This will guarantee the same result on each computer.
 version: 2.1
 
 orbs:
-  pod: xxkrashxx/pod@1.1.2
+  pod: xxkrashxx/pod@1.1.3
 
 jobs:
   bundler-usage:
