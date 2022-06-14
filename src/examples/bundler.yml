@@ -1,5 +1,6 @@
 description: >
-  Using cocoapods in bundler environment.
+  For more complex environment, we highly recommend using environment as a code approach.  
+  This will guarantee the same result on each computer.
 
 usage:
   version: 2.1
