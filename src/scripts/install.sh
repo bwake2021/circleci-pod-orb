@@ -21,7 +21,7 @@ if [ $PARAM_USES_BUNDLER == 1 ]; then
         echo 'cocoapods gem installed.'
     else
         echo "Gem cocoapods is not installed!";
-        echo "Double check if it's included into your Gemfile, and \"bundle install\" executed.";
+        echo "Double check if it's included into your Gemfile, and \"bundle install\" executed during the build pipeline.";
         exit 1;
     fi
 

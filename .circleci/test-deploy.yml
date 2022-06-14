@@ -46,6 +46,7 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - run: bundle install
       - pod/install:
           with-bundler: true
 
