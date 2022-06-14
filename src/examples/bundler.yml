@@ -1,5 +1,5 @@
 description: >
-  For more complex environment, we highly recommend using environment as a code approach.  
+  For more complex environment, we highly recommend using environment as a code approach.
   This will guarantee the same result on each computer.
 
 usage:
