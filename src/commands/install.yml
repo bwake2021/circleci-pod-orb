@@ -45,6 +45,7 @@ parameters:
     description: >
       Utilises bundler environment.
       Do not falls back to the global cocoapods, if enabled.
+      Please, use it explicitly!
 
 steps:
   - when:
