@@ -7,7 +7,7 @@ params=()
 [[ $PARAM_PROJECT_DIRECTORY != '.' ]] && params+=("--project-directory=$PARAM_PROJECT_DIRECTORY" )
 
 PREFIX=''
-if [$PARAM_USES_BUNDLER == 1] then
+if [ $PARAM_USES_BUNDLER == 1 ] then
 
      command -v bundler >/dev/null 2>&1 || { 
         echo >&2 "The Bundler is required, but it's not installed.  Aborting.";
