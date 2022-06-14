@@ -9,8 +9,23 @@ Wrapps caching mechanism to improve build time.
 
 ## Examples
 
-[ ] add examples :)
+Basically, commands are pretty much the same as if you used plain console.
 
+```
+version: 2.1
+
+orbs:
+  pod: xxkrashxx/pod@1.0.0
+
+workflows:
+  basic-usage:
+    jobs:
+      - checkout
+      - pod/install:
+          deployment: false
+          repo-update: true
+          project-directory: ./subfolder
+```
 ---
 
 ## Resources
