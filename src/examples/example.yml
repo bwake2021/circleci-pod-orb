@@ -9,13 +9,6 @@ usage:
     basic-usage:
       jobs:
         - checkout
-        - pod/install
-
-    advanced-usage:
-      macos:
-        xcode: 13.4.1
-      steps:
-        - checkout
         - pod/install:
             deployment: false
             repo-update: true
