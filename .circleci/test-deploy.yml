@@ -27,16 +27,16 @@ jobs:
       - pod/install:
           project-directory: ./test-app
   
-    install-for-subfolder-test:
-      description: Check pod install with multiple commands.
-      macos:
-        xcode: 13.4.1
-      steps:
-        - checkout
-        - pod/install:
-            deployment: true
-            clean-install: true
-            project-directory: ./test-app
+  install-for-multiple-arguments:
+    description: Check pod install with multiple commands.
+    macos:
+      xcode: 13.4.1
+    steps:
+      - checkout
+      - pod/install:
+          deployment: true
+          clean-install: true
+          project-directory: ./test-app
 
 workflows:
   test-deploy:
@@ -44,6 +44,8 @@ workflows:
       - install-for-root-test:
           filters: *filters
       - install-for-subfolder-test:
+          filters: *filters
+      - install-for-multiple-arguments:
           filters: *filters
       - orb-tools/pack:
           filters: *filters
@@ -55,6 +57,7 @@ workflows:
             - orb-tools/pack
             - install-for-root-test
             - install-for-subfolder-test
+            - install-for-multiple-arguments
           context: orb-publishing
           filters:
             branches:
