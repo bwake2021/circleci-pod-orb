@@ -8,4 +8,4 @@ params=()
 
 pwd
 echo $params
-pod install $params
+pod install "${params[@]}"
