@@ -18,9 +18,9 @@ version: 2.1
 orbs:
   pod: xxkrashxx/pod@1.1.1<-- include this
 
-workflows:
+jobs:
   basic-usage:
-    jobs:
+    steps:
       - checkout
       - pod/install <-- one liner command
       ...
@@ -35,9 +35,9 @@ version: 2.1
 orbs:
   pod: xxkrashxx/pod@1.1.1
 
-workflows:
-  basic-usage:
-    jobs:
+jobs:
+  bundler-usage:
+    steps:
       - checkout
       - pod/install:
           with-bundler: true
