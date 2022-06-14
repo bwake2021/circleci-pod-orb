@@ -8,18 +8,44 @@ filters: &filters
     only: /.*/
 
 jobs:
-  command-tests:
-    working_directory: $CIRCLE_WORKING_DIRECTORY/test-app
+  install-for-root-test:
+    description: Check pod install working in root.
+    working_directory: ~/project/test-app
+    macos:
+      xcode: 13.4.1
+    steps:
+      - checkout:
+          path: ~/project
+      - pod/install
+
+  install-for-subfolder-test:
+    description: Check pod install working in subfolder.
     macos:
       xcode: 13.4.1
     steps:
       - checkout
-      - pod/install
+      - pod/install:
+          project-directory: ./test-app
+  
+  install-for-multiple-arguments:
+    description: Check pod install with multiple commands.
+    macos:
+      xcode: 13.4.1
+    steps:
+      - checkout
+      - pod/install:
+          deployment: true
+          clean-install: true
+          project-directory: ./test-app
 
 workflows:
   test-deploy:
     jobs:
-      - command-tests:
+      - install-for-root-test:
+          filters: *filters
+      - install-for-subfolder-test:
+          filters: *filters
+      - install-for-multiple-arguments:
           filters: *filters
       - orb-tools/pack:
           filters: *filters
@@ -29,7 +55,9 @@ workflows:
           pub-type: production
           requires:
             - orb-tools/pack
-            - command-tests
+            - install-for-root-test
+            - install-for-subfolder-test
+            - install-for-multiple-arguments
           context: orb-publishing
           filters:
             branches:
