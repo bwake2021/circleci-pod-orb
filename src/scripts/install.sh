@@ -9,15 +9,16 @@ params=()
 PREFIX=''
 if [ $PARAM_USES_BUNDLER == 1 ]; then
 
-     command -v bundler >/dev/null 2>&1 || { 
+    if [ ! command -v bundler &> /dev/null ]; then
         echo >&2 "The Bundler is required, but it's not installed.  Aborting.";
         echo "Consider either removing \"with-bundler\" setting or set up the environment.";
         exit 1; 
-    }
+    fi
 
-    if ! gem spec cocoapods > /dev/null 2>&1; then
+    if [ ! gem list cocoapods ]; then
         echo "Gem cocoapods is not installed!";
         echo "Double check if it's included into your Gemfile, and \"bundle install\" executed.";
+        exit 1;
     fi
 
     PREFIX='bundle exec'
