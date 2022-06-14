@@ -39,6 +39,11 @@ parameters:
       The path to the root of the project directory
 
 steps:
+  - run:
+      name: check where we are
+      command: |
+        ls && pwd
+
   - when:
       condition: <<parameters.with-cache>>
       steps:
