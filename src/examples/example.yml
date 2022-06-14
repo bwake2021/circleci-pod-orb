@@ -1,5 +1,5 @@
 description: >
-  Basic usage.
+  Basically, commands are pretty much the same as if you used plain console.
 
 usage:
   version: 2.1
@@ -10,3 +10,13 @@ usage:
       jobs:
         - checkout
         - pod/install
+
+    advanced-usage:
+      macos:
+        xcode: 13.4.1
+      steps:
+        - checkout
+        - pod/install:
+            deployment: false
+            repo-update: true
+            project-directory: ./subfolder
