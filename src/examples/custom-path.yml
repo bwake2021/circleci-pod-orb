@@ -7,9 +7,9 @@ usage:
   orbs:
     pod: xxkrashxx/pod@1.1.1
 
-jobs:
+workflows:
   custom-path:
-    steps:
+    jobs:
       - checkout
       - pod/install:
           project-directory: ./test-app
