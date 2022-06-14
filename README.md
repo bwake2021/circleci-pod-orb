@@ -5,7 +5,7 @@
 
 This orb wrapps [cocoapods](https://cocoapods.org) and makes it handy to use in CircleCI.  
 Allows controll all basic functionality used during installation process.  
-Wrapps caching mechanism to improve build time.
+Wrapps caching mechanism to improve build time.  
 
 ## Examples
 
