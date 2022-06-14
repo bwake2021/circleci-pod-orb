@@ -1,0 +1,15 @@
+description: >
+  It might be required to specify sub-path.
+  For instance, if you have subproject.
+
+usage:
+  version: 2.1
+  orbs:
+    pod: xxkrashxx/pod@1.1.1
+
+jobs:
+  custom-path:
+    steps:
+      - checkout
+      - pod/install:
+          project-directory: ./test-app

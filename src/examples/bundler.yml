@@ -5,10 +5,11 @@ description: >
 usage:
   version: 2.1
   orbs:
-    pod: xxkrashxx/pod@1.1.0
-  workflows:
-    basic-usage:
-      jobs:
-        - checkout
-        - pod/install:
-            with-bundler: true
+    pod: xxkrashxx/pod@1.1.1
+
+jobs:
+  bundler-usage:
+    steps:
+      - checkout
+      - pod/install:
+          with-bundler: true

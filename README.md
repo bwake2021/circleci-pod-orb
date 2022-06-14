@@ -16,7 +16,7 @@ Commands are pretty much the same as if you used them from the console:
 version: 2.1
 
 orbs:
-  pod: xxkrashxx/pod@1.1.0 <-- include this
+  pod: xxkrashxx/pod@1.1.1<-- include this
 
 workflows:
   basic-usage:
@@ -33,7 +33,7 @@ This will guarantee the same result on each computer.
 version: 2.1
 
 orbs:
-  pod: xxkrashxx/pod@1.1.0
+  pod: xxkrashxx/pod@1.1.1
 
 workflows:
   basic-usage:

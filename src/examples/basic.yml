@@ -1,12 +1,13 @@
 description: >
-  The basic solution - is just onliner.
+  The basic solution - is just oneliner.
 
 usage:
   version: 2.1
   orbs:
-    pod: xxkrashxx/pod@1.1.0
-  workflows:
-    basic-usage:
-      jobs:
-        - checkout
-        - pod/install
+    pod: xxkrashxx/pod@1.1.1
+
+jobs:
+  basic-usage:
+    steps:
+      - checkout
+      - pod/install
