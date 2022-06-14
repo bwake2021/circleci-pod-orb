@@ -9,25 +9,44 @@ Wrapps caching mechanism to improve build time.
 
 ## Examples
 
-Basically, commands are pretty much the same as if you used plain console.
+Commands are pretty much the same as if you used them from the console:
 
+### Basic usage
 ```
 version: 2.1
 
 orbs:
-  pod: xxkrashxx/pod@1.0.1
+  pod: xxkrashxx/pod@1.1.0 <-- include this
+
+workflows:
+  basic-usage:
+    jobs:
+      - checkout
+      - pod/install <-- one liner command
+      ...
+```
+
+### [Bundler](https://bundler.io) support!
+We highly recommend using environment as a code approach.  
+This will guarantee the same result on each computer.
+```
+version: 2.1
+
+orbs:
+  pod: xxkrashxx/pod@1.1.0
 
 workflows:
   basic-usage:
     jobs:
       - checkout
       - pod/install:
-          deployment: false
-          repo-update: true
-          project-directory: ./subfolder
-      - run: curl -sL https://firebase.tools | bash
-      - run: bundle exec fastlane upload_firebase
+          with-bundler: true
+      ...
 ```
+
+### Advanced
+For advanced usage examples, please, check official [Orb page](https://circleci.com/developer/orbs/orb/pod/pod).
+
 ---
 
 ## Resources
