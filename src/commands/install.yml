@@ -15,7 +15,7 @@ parameters:
   repo-update:
     type: boolean
     default: false
-    description: Force running `pod repo update` before install
+    description: Force running `pod repo update` before install.
 
   deployment:
     type: boolean
@@ -36,7 +36,8 @@ parameters:
     default: .
     description: >
       Project directory.
-      The path to the root of the project directory
+      The path to the root of the project directory.
+      Defaults to project's root.
 
 steps:
   - when:

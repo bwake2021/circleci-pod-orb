@@ -6,4 +6,6 @@ params=()
 [[ $PARAM_CLEAN_INSTALL == true ]] && params+=(--clean-install)
 [[ $PARAM_PROJECT_DIRECTORY == true ]] && params+=(--project-directory)
 
+pwd
+cat params
 pod install "${params[@]}"
