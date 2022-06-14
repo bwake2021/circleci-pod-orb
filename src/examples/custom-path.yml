@@ -6,10 +6,9 @@ usage:
   version: 2.1
   orbs:
     pod: xxkrashxx/pod@1.1.2
-
-workflows:
-  custom-path:
-    jobs:
-      - checkout
-      - pod/install:
-          project-directory: ./test-app
+  workflows:
+    custom-path:
+      jobs:
+        - checkout
+        - pod/install:
+            project-directory: ./test-app

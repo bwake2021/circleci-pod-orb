@@ -5,9 +5,8 @@ usage:
   version: 2.1
   orbs:
     pod: xxkrashxx/pod@1.1.2
-
-workflows:
-  basic-usage:
-    jobs:
-      - checkout
-      - pod/install
+  workflows:
+    basic-usage:
+      jobs:
+        - checkout
+        - pod/install

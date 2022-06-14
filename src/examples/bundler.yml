@@ -6,10 +6,9 @@ usage:
   version: 2.1
   orbs:
     pod: xxkrashxx/pod@1.1.2
-
-workflows:
-  bundler-usage:
-    jobs:
-      - checkout
-      - pod/install:
-          with-bundler: true
+  workflows:
+    bundler-usage:
+      jobs:
+        - checkout
+        - pod/install:
+            with-bundler: true
