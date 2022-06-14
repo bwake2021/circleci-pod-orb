@@ -26,6 +26,17 @@ jobs:
       - checkout
       - pod/install:
           project-directory: ./test-app
+  
+    install-for-subfolder-test:
+      description: Check pod install with multiple commands.
+      macos:
+        xcode: 13.4.1
+      steps:
+        - checkout
+        - pod/install:
+            deployment: true
+            clean-install: true
+            project-directory: ./test-app
 
 workflows:
   test-deploy:
